@@ -1,5 +1,14 @@
 OxWebsite::Application.routes.draw do
 
+  resources :articles
+
+
+  resources :subcategories
+
+
+  resources :categories
+
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
