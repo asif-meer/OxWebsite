@@ -1,6 +1,8 @@
 OxWebsite::Application.routes.draw do
 
-  resources :articles
+  resources :articles do
+      collection { post :get_subcategories }
+  end
 
 
   resources :subcategories
