@@ -6,7 +6,13 @@
         <li><a href="#top"> <span class="glyphicon glyphicon-home"> Home</span> </a></li>
         <li><a href="#about"> <span class="glyphicon glyphicon-list-alt"> About</span> </a></li>
         <li><a href="#services"> <span class="glyphicon glyphicon-th"> Register</span> </a></li>
-        <li><a href="#portfolio"> <span class="glyphicon glyphicon-user"> Login</span> </a></li>
+        <li>
+          <% if user_signed_in? %>
+             <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow"> <span class="glyphicon glyphicon-user"> Logout</span> </a>
+          <% else %>
+            <a href="<%= new_user_session_path %>"> <span class="glyphicon glyphicon-user"> Login</span> </a>
+          <% end %>
+        </li>
         <li><a href="#contact"> <span class="glyphicon glyphicon-envelope"> Contact</span> </a></li>
         <li>
           <div class="input-group">
