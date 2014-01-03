@@ -5,7 +5,13 @@
         <li class="sidebar-brand"><a href="#">OxCircle</a></li>
         <li><a href="#top"> <span class="glyphicon glyphicon-home"> Home</span> </a></li>
         <li><a href="#about"> <span class="glyphicon glyphicon-list-alt"> About</span> </a></li>
-        <li><a href="#services"> <span class="glyphicon glyphicon-th"> Register</span> </a></li>
+        <li>
+          <% if user_signed_in? %>
+            <a href="<%= edit_user_registration_path %>"> <span class="glyphicon glyphicon-th"> Profile</span> </a>
+          <% else %>
+            <a href="<%= new_user_registration_path %>"> <span class="glyphicon glyphicon-th"> Register</span> </a>
+          <% end %>
+        </li>
         <li>
           <% if user_signed_in? %>
              <a href="<%= destroy_user_session_path %>" data-method="delete" rel="nofollow"> <span class="glyphicon glyphicon-user"> Logout</span> </a>
