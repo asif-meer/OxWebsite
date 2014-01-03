@@ -1,1 +1,5 @@
-alert("ajax");
+<% if @category.subcategories.present? %>
+$('.subcategories').html("<%= escape_javascript(render(:partial=>"subcategories")) %>")
+<% else %>
+$('.subcategories').html("")
+<% end %>

@@ -1,0 +1,4 @@
+<div class="field">
+<%= label_tag :subcategory %>
+<%= select_tag :subcategory,options_for_select(@subcategories.collect{ |u| [u.name, u.id] }),:prompt=>"Select" %>
+</div>

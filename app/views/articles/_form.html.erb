@@ -23,14 +23,10 @@
     <%= label_tag :category %><br />
     <%= select_tag :category, options_for_select(@categories.collect{ |u| [u.name, u.id] }),:prompt=>"Select",:id=>"article_category" %>
   </div>
-  <div class="field">
-    <%= f.label :container_id %><br />
-    <%= f.text_field :container_id %>
+
+  <div class="subcategories">
   </div>
-  <div class="field">
-    <%= f.label :container_type %><br />
-    <%= f.text_field :container_type %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
