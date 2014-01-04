@@ -1,0 +1,5 @@
+<% if @category.subcategories.present? %>
+$('.subcategories').html("<%= escape_javascript(render(:partial=>"articles/subcategories")) %>")
+<% else %>
+$('.subcategories').html("")
+<% end %>

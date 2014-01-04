@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= label_tag :category %><br />
-    <%= select_tag :category, options_for_select(@categories.collect{ |u| [u.name, u.id] }),:prompt=>"Select",:id=>"article_category" %>
+    <%= select_tag :category, options_for_select(Category.all.collect{ |u| [u.name, u.id] }),:prompt=>"Select",:id=>"article_category" %>
   </div>
 
   <div class="subcategories">

@@ -1,0 +1,9 @@
+<%= semantic_form_for [:admin, @article] do |f| %>
+    <%= f.inputs :title, :content %>
+    <%= label_tag :category %><br />
+    <%= select_tag :category, options_for_select(Category.all.collect{ |u| [u.name, u.id] }),:prompt=>"Select",:id=>"article_category" %>
+    <div class="subcategories"></div>
+    <%= f.actions :submit %>
+
+
+  <% end %>

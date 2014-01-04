@@ -1,13 +1,4 @@
 class ArticlesController < InheritedResources::Base
-  def new
-    @categories=Category.all
-    @article=Article.new
-  end
-
-  def edit
-    @categories=Category.all
-    @article=Article.find(params[:id])
-  end
 
   def create
     @article = Article.new(params[:article])
