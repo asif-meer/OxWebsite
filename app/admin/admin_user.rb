@@ -18,7 +18,3 @@ ActiveAdmin.register AdminUser do
     f.actions                         
   end                                 
 end
-
-ActiveAdmin.register Category do
-  
-end
