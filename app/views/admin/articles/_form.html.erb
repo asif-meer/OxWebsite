@@ -1,8 +1,15 @@
+<%= tinymce_assets %>
 <%= semantic_form_for [:admin, @article] do |f| %>
-    <%= f.inputs :title, :content %>
-    <%= label_tag :category %><br />
+    <%#= f.inputs :title, :content %>
+    <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :content, :input_html=> {:class => "tinymce", :rows => 40, :cols => 120,:id=>"article-content"} %>
+    <%= tinymce %>
+    <%= label_tag :category %>
     <%= select_tag :category, options_for_select(Category.all.collect{ |u| [u.name, u.id] }),:prompt=>"Select",:id=>"article_category" %>
     <div class="subcategories"></div>
+    <% end %>
+    
     <%= f.actions :submit %>
 
 
